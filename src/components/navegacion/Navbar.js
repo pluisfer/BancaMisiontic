@@ -5,7 +5,7 @@ import imagelogo from "../../assets/logo.jpg";
 
 const navbar = () => {
   return (
-    <div>
+    <>
       <nav className="navbar navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img src={imagelogo} width="224" height="60" alt="" />
@@ -26,7 +26,7 @@ const navbar = () => {
       <nav className="navbar navbar-primary bg-color">
         <p className="m-2">Bienvenido a la Banca Caja Social</p>
       </nav>
-    </div>
+    </>
   );
 };
 

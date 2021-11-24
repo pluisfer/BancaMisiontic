@@ -5,7 +5,7 @@ import imagenvigilado from "../../assets/vigiladofooter.png";
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <div className="d-flex justify-content-between text-white bg-color-footer">
         <div className="row col-2">
           <p className="m-4 text-center text-justify">
@@ -19,11 +19,11 @@ const Footer = () => {
         </div>
         <div className="row col-2">
           <p className="m-6 text-center text-justify">
-            Directorio Directorios alternos Contáctenos
+            Directorio alternos Contáctenos
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
