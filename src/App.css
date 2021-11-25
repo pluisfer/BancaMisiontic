@@ -9,3 +9,8 @@
   color: white !important;
 
 }
+
+
+.img-fondo {
+  background-image: url(./assets/fondo2.jpg);
+}

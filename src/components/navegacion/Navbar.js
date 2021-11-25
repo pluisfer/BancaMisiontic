@@ -16,7 +16,7 @@ const navbar = () => {
             Login
           </Link>
           <Link to="/Registrarse" className="btn btn-danger m-2">
-            Registrarse
+            Registrate
           </Link>
           <Link to="/" className="btn btn-danger m-2">
             Inicio
@@ -24,7 +24,7 @@ const navbar = () => {
         </div>
       </nav>
       <nav className="navbar navbar-primary bg-color">
-        <p className="m-2">Bienvenido a la Banca Caja Social</p>
+        <p className="m-2">Bienvenido a la plataforma del Banco Caja Social</p>
       </nav>
     </>
   );

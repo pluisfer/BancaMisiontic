@@ -1,10 +1,11 @@
 import React from "react";
+import HomeFondo from "../../components/fondoHome/HomeFondo";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Este es la pagina de Inicio</h1>
-    </div>
+    <>
+      <HomeFondo />
+    </>
   );
 };
 

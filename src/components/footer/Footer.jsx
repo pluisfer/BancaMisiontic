@@ -18,7 +18,7 @@ const Footer = () => {
           <img className="m-4" src={imagenvigilado} alt="" />
         </div>
         <div className="row col-2">
-          <p className="m-6 text-center text-justify">
+          <p className="mt-4 text-center text-justify">
             Directorio alternos Contáctenos
           </p>
         </div>
