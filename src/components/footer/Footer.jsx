@@ -1,7 +1,7 @@
 import React from "react";
-import "../../App.css";
-import imagensocial from "../../assets/redessocialesfooter.png";
-import imagenvigilado from "../../assets/vigiladofooter.png";
+import "./InstitutionalFooter.css";
+import imagensocial from "./redessocialesfooter.png";
+import imagenvigilado from "./vigiladofooter.png";
 
 const Footer = () => {
   return (

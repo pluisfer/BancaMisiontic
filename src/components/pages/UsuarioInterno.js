@@ -1,6 +1,6 @@
 import React from "react";
 
-const usuarioInterno = () => {
+const UsuarioInterno = () => {
   return (
     <div>
       <h1>Este es la pagina de usuario interno</h1>
@@ -8,4 +8,4 @@ const usuarioInterno = () => {
   );
 };
 
-export default usuarioInterno;
+export default UsuarioInterno;

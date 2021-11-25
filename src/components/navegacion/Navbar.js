@@ -7,20 +7,20 @@ const navbar = () => {
   return (
     <>
       <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src={imagelogo} width="224" height="60" alt="" />
-        </a>
+        </Link>
 
         <div>
-          <button type="button" className="btn btn-danger m-2">
-            lniciar
-          </button>
-          <button type="button" className="btn btn-danger m-2">
+          <Link to="/Login" className="btn btn-danger m-2">
+            Login
+          </Link>
+          <Link to="/Registrarse" className="btn btn-danger m-2">
             Registrarse
-          </button>
-          <button type="button" className="btn btn-danger m-2">
-            Salir
-          </button>
+          </Link>
+          <Link to="/" className="btn btn-danger m-2">
+            Inicio
+          </Link>
         </div>
       </nav>
       <nav className="navbar navbar-primary bg-color">
