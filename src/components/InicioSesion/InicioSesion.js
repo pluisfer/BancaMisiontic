@@ -17,8 +17,9 @@ function InicioSesion() {
     console.log(request);
 
     fetch("http://localhost:8080/Login", {
+      headers: { "content-type": "application/json" },
       method: "POST",
-      body: request,
+      body: JSON.stringify(request),
     })
       .then((res) => res.json())
       .then((resp) => {
