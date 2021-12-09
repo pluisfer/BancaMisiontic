@@ -1,8 +1,48 @@
 import "./inicioSesion.css";
 import React from "react";
 import ImgEnvio from "./img/ImgEnvio.jpg";
+// import axios from "axios";
+import { useRef } from "react";
+// import { Link } from "react-router-dom";
 
 function InicioSesion() {
+  const nomRef = useRef();
+  const passRef = useRef();
+
+  function login() {
+    const request = {
+      nombre: nomRef.current.value,
+      password: passRef.current.value,
+    };
+    console.log(request);
+
+    fetch("http://localhost:8080/Login", {
+      method: "POST",
+      body: request,
+    })
+      .then((res) => res.json())
+      .then((resp) => {
+        alert(resp.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  // const request = {
+  //   nombre: nomRef.current.value,
+  //   password: passRef.current.value,
+  // };
+
+  // axios
+  //   .post("https://localhost:8080/Login", request)
+  //   .then((resp) => {
+  //     alert(resp.data.message);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+
   const Usuario = "Usuario";
   const Contraseña = "Contraseña";
   return (
@@ -15,14 +55,18 @@ function InicioSesion() {
               <label for="staticEmail" className="col-sm-3 col-form-label">
                 {Usuario}
               </label>
-              <input type="text" className="form-control"></input>
+              <input ref={nomRef} type="text" className="form-control"></input>
             </div>
 
             <div className="form-input-item mb-4">
               <label for="staticEmail" className="col-sm-3 col-form-label">
                 {Contraseña}
               </label>
-              <input type="text" className="form-control"></input>
+              <input
+                ref={passRef}
+                type="password"
+                className="form-control"
+              ></input>
             </div>
             <div className="mb-3 row">
               <label for="inputTipo" className="col-sm-3 col-form-label">
@@ -43,7 +87,9 @@ function InicioSesion() {
               <div class="container">
                 <div class="row">
                   <div class="col text-center">
-                    <button class="btn btn-default">Iniciar Sesión</button>
+                    <button class="btn btn-default" onClick={login}>
+                      Iniciar Sesión
+                    </button>
                   </div>
                 </div>
               </div>

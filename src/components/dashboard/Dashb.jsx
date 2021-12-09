@@ -13,7 +13,7 @@ export const Dashb = () => {
       <div className="container mx-auto">
         <div className="row p-4 mt-2 mb-2">
           <div className="btn-UI col  m-4">
-            <Link className="d-flex flex-column" to="/">
+            <Link className="d-flex flex-column" to="/DashUserPage">
               <span className="align-self-center p-2 font-weight-bold">
                 Gestion de Usuarios
               </span>
