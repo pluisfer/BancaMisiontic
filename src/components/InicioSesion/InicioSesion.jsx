@@ -3,46 +3,40 @@ import React from "react";
 import ImgEnvio from "./img/ImgEnvio.jpg";
 // import axios from "axios";
 import { useRef } from "react";
-// import { Link } from "react-router-dom";
+// import {Redirect}  from "react-router-dom";
 
 function InicioSesion() {
+  // verificar que este logeado el usuarios
+
   const nomRef = useRef();
   const passRef = useRef();
 
   function login() {
+    //capturar los datos usu/pass
     const request = {
       nombre: nomRef.current.value,
       password: passRef.current.value,
     };
     console.log(request);
-
+    //consumir API Login
     fetch("http://localhost:8080/Login", {
       headers: { "content-type": "application/json" },
       method: "POST",
       body: JSON.stringify(request),
     })
       .then((res) => res.json())
-      .then((resp) => {
-        alert(resp.message);
+      .then((res) => {
+        //alert(res.message);
+        if (res.message === "Successful Login!!") {
+          window.location.href = "/Dashboard";
+        } else {
+          alert(res.message);
+        }
       })
       .catch((err) => {
         console.log(err);
       });
   }
-
-  // const request = {
-  //   nombre: nomRef.current.value,
-  //   password: passRef.current.value,
-  // };
-
-  // axios
-  //   .post("https://localhost:8080/Login", request)
-  //   .then((resp) => {
-  //     alert(resp.data.message);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
 
   const Usuario = "Usuario";
   const Contraseña = "Contraseña";
@@ -88,7 +82,11 @@ function InicioSesion() {
               <div class="container">
                 <div class="row">
                   <div class="col text-center">
-                    <button class="btn btn-default" onClick={login}>
+                    <button
+                      type="Button "
+                      class="btn btn-default"
+                      onClick={login}
+                    >
                       Iniciar Sesión
                     </button>
                   </div>

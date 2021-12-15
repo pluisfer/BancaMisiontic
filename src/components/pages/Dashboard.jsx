@@ -1,5 +1,5 @@
 import React from "react";
-import { Dashb } from "../../components/dashboard/Dashb";
+import { Dashb } from "../dashboard/Dashb";
 
 export const Dashboard = () => {
   return (
