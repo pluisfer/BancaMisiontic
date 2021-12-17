@@ -1,0 +1,10 @@
+.nav-bg-dark:hover {
+    background-color: #212529;
+}
+.cuadro {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+#formBui {
+    border: solid blue;
+}
