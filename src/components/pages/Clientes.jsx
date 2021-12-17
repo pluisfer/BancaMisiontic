@@ -1,11 +1,10 @@
 import React from "react";
+import BancaCard from "../BancaVirtualUser/BancaCard/BancaCard";
 
-const Clientes = () => {
+export const Clientes = () => {
   return (
-    <div>
-      <h1>Este es la pagina de clientes</h1>
-    </div>
+    <>
+      <BancaCard />
+    </>
   );
 };
-
-export default Clientes;

@@ -1,10 +1,11 @@
 import React from "react";
+import DatosPersonalesCliente from "../DatosPersonalesCliente/AddDatosPersonales";
 
 const Registrarse = () => {
   return (
-    <div>
-      <h1>Pagina de registro</h1>
-    </div>
+    <>
+      <DatosPersonalesCliente />
+    </>
   );
 };
 

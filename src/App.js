@@ -5,11 +5,15 @@ import Footer from "./components/footer/Footer";
 import Login from "./components/pages/Login";
 import Home from "./components/pages/Home";
 import Registrarse from "./components/pages/Registrarse";
-import Clientes from "./components/pages/Clientes";
+// import { Clientes } from "./components/pages/Clientes";
 import { Dashboard } from "./components/pages/Dashboard";
 import UsuarioInterno from "./components/pages/UsuarioInterno";
 import { DashUserPage } from "./components/pages/DashUserPage";
 import { BarraDash } from "./components/barraDash/BarraDash";
+import { Clientes } from "./components/pages/Clientes";
+import BuiCancelar from "./components/BuicancelarProducto/BuiCancelar";
+import BuiTransferir from "./components/BuiTransferir/BuiTransferir";
+import BuiResponder from "./components/BuiResponder/BuiResponder";
 
 const App = () => {
   return (
@@ -24,6 +28,9 @@ const App = () => {
         <Route path="/UsuarioInterno" element={<UsuarioInterno />} />
         <Route path="/DashUserPage" element={<DashUserPage />} />
         <Route path="/DashCrear" element={<BarraDash />} />
+        <Route path="/BuiCancelar" element={<BuiCancelar />} />
+        <Route path="/BuiTransferir" element={<BuiTransferir />} />
+        <Route path="/BuiResponder" element={<BuiResponder />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,10 +1,11 @@
 import React from "react";
+import BuiCancelar from "../BuicancelarProducto/BuiCancelar";
 
 const UsuarioInterno = () => {
   return (
-    <div>
-      <h1>Este es la pagina de usuario interno</h1>
-    </div>
+    <>
+      <BuiCancelar />
+    </>
   );
 };
 
