@@ -15,6 +15,11 @@ import BuiTransferir from "./components/BuiTransferir/BuiTransferir";
 import BuiResponder from "./components/BuiResponder/BuiResponder";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import Layout from "./components/Layout/Layout";
+import BvpQrForm from "./components/bvpQrForm/bvpQrForm";
+import BVExtractoCuentaPage from "./components/BVP Extracto/BVExtracto_Cuenta/BVExtractoCuentaPage";
+import DetalleProducto from "./components/BVP Extracto/BVExtracto/DetalleProducto";
+import BVExtractoPage from "./components/BVP Extracto/BVExtracto/BVExtractoPage";
+import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
 
 const App = () => {
   return (
@@ -32,6 +37,11 @@ const App = () => {
           <Route path="/BuiCancelar" element={<BuiCancelar />} />
           <Route path="/BuiTransferir" element={<BuiTransferir />} />
           <Route path="/BuiResponder" element={<BuiResponder />} />
+          <Route path="/bvpQrForm" element={<BvpQrForm />} />
+          <Route path="/BVExtractoCuentaPage" element={<BVExtractoCuentaPage />} />
+          <Route path="/DetalleProducto" element={<DetalleProducto />} />
+          <Route path="/BVExtractoPage" element={<BVExtractoPage />} />
+          <Route path="/CrearFiduCuenta" element={<CrearFiduCuenta />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
