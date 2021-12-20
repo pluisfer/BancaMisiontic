@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import avatar from "./img/undraw_male_avatar_323b.svg";
 import gestion from "./img/undraw_progressive_app_m-9-ms.svg";
 import "./dash.css";
+import HeaderAdmin from "../HeaderAdmin/HeaderAdmin";
+import Footer from "../footer/Footer";
 
 export const Dashb = () => {
   return (
     <>
+    <HeaderAdmin/>
       <div className="d-flex flex-row-reverse">
         <p className="bg-color p-2 text-white">Administrador</p>
       </div>
@@ -43,6 +46,7 @@ export const Dashb = () => {
         </div>
       </div>
       <div className="cuarto-circulo d-flex flex-row-reverse"></div>
+      <Footer/>
     </>
   );
 };

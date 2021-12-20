@@ -22,6 +22,8 @@ import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
 import BVCliente from "./components/BVCliente/BVCliente";
 import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/BVExtractoFormatoPage";
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
+import HeaderAdmin from "./components/HeaderAdmin/HeaderAdmin";
+
 
 
 
@@ -49,6 +51,7 @@ const App = () => {
           <Route path="/BVCliente" element={<BVCliente />} />
           <Route path="/BVExtractoFormatoPage" element={<BVExtractoFormatoPage />} />
           <Route path="/HeaderUserInterno" element={<HeaderUserInterno />} />
+          <Route path="/HeaderAdmin" element={<HeaderAdmin />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
     </Router>
