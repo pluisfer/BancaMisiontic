@@ -1,7 +1,7 @@
 import React from 'react';
 import "./CancelarFidu.css";
-import ImgCancelarCuentaBVPF from './ImgCancelarCuentaBVPF.jpg';
-import Lateral from "./Lateral/Lateral"
+import {Lateral} from '../BVCCrearFiduCuenta/Lateral/Lateral';
+
 
 
 function CancelarFiducuenta () {
@@ -10,7 +10,7 @@ function CancelarFiducuenta () {
         <div className="paragraphs">
             <div class="row">
                 <div className="tituloCan-sm-3 ">
-                <div className="content-heading"><img classNameName="imagCF" src={ImgCancelarCuentaBVPF} alt="Imagen"/></div>
+                <div className="content-heading"><img classNameName="imagCF" alt="Imagen"/></div>
                     <p> Crea tu Fiducuenta​ en pocos pasos</p>
                 </div>
             </div>

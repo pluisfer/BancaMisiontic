@@ -2,13 +2,18 @@ import React from "react";
 //import { Link } from "react-router-dom";
 
 import Navbar from "../BuiTransferir/NavbarBui";
+import Footer from "../footer/Footer";
+import HeaderUserInterno from "../HeaderUserInterno/HeaderUserInterno";
+import "./BuiResponder.css";
 
 const BuiCancelar = () => {
   return (
     <>
+    <HeaderUserInterno/>
       <Navbar />
-      <div className="cuadro">
-        <form className="mb-3 pt-4 pb-4">
+
+      <div className="cuadro mt-3 d-flex  justify-content-center container">
+        <form className="ms-5 me-5 ps-5 pe-5 mb-3 pt-4 pb-4">
           <div className="row mb-3">
             <div className="form-group col">
               <div className="container">
@@ -97,6 +102,7 @@ const BuiCancelar = () => {
           </div>
         </form>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -8,7 +8,6 @@ import Registrarse from "./components/pages/Registrarse";
 import { Dashboard } from "./components/pages/Dashboard";
 import UsuarioInterno from "./components/pages/UsuarioInterno";
 import { DashUserPage } from "./components/pages/DashUserPage";
-import { BarraDash } from "./components/barraDash/BarraDash";
 import { Clientes } from "./components/pages/Clientes";
 import BuiCancelar from "./components/BuicancelarProducto/BuiCancelar";
 import BuiTransferir from "./components/BuiTransferir/BuiTransferir";
@@ -20,11 +19,17 @@ import BVExtractoCuentaPage from "./components/BVP Extracto/BVExtracto_Cuenta/BV
 import DetalleProducto from "./components/BVP Extracto/BVExtracto/DetalleProducto";
 import BVExtractoPage from "./components/BVP Extracto/BVExtracto/BVExtractoPage";
 import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
+import BVCliente from "./components/BVCliente/BVCliente";
+import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/BVExtractoFormatoPage";
+import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
+
+
 
 const App = () => {
   return (
+    <>
     <Router>
-      <Layout>
+     
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
@@ -33,7 +38,6 @@ const App = () => {
           <Route path="/Clientes" element={<Clientes />} />
           <Route path="/UsuarioInterno" element={<UsuarioInterno />} />
           <Route path="/DashUserPage" element={<DashUserPage />} />
-          <Route path="/DashCrear" element={<BarraDash />} />
           <Route path="/BuiCancelar" element={<BuiCancelar />} />
           <Route path="/BuiTransferir" element={<BuiTransferir />} />
           <Route path="/BuiResponder" element={<BuiResponder />} />
@@ -42,10 +46,16 @@ const App = () => {
           <Route path="/DetalleProducto" element={<DetalleProducto />} />
           <Route path="/BVExtractoPage" element={<BVExtractoPage />} />
           <Route path="/CrearFiduCuenta" element={<CrearFiduCuenta />} />
+          <Route path="/BVCliente" element={<BVCliente />} />
+          <Route path="/BVExtractoFormatoPage" element={<BVExtractoFormatoPage />} />
+          <Route path="/HeaderUserInterno" element={<HeaderUserInterno />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </Layout>
     </Router>
+    <Router>
+
+    </Router>
+    </>
   );
 };
 

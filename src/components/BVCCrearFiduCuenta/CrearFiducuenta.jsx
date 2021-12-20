@@ -1,4 +1,6 @@
 import React from 'react';
+import BancaHeader from '../BancaVirtualUser/BancaHeader/BancaHeader';
+import Footer from '../footer/Footer';
 import "./CrearFidu.css";
 import Lateral from "./Lateral/Lateral"
 
@@ -28,6 +30,7 @@ function CrearFiduCuenta() {
 
     return (
         <>
+        <BancaHeader></BancaHeader>
             <div>
                 <div className="paragraphs">
                     <div class="row">
@@ -94,7 +97,7 @@ function CrearFiduCuenta() {
 
                 </div>
             </div>
-
+<Footer/>
         </>
     )
 }

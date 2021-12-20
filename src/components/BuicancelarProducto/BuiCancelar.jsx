@@ -1,15 +1,20 @@
 import React from "react";
+import BancaHeader from "../BancaVirtualUser/BancaHeader/BancaHeader";
 //import { Link } from "react-router-dom";
 
 import Navbar from "../BuiTransferir/NavbarBui";
+import Lateral from "../BVCCrearFiduCuenta/Lateral/Lateral";
+import Footer from "../footer/Footer";
+import HeaderUserInterno from "../HeaderUserInterno/HeaderUserInterno";
 
 import "./buiCancelar.css";
 
 const BuiCancelar = () => {
   return (
     <>
-      <Navbar />
-      <div className="cuadro">
+    <HeaderUserInterno/>
+  <Navbar/>
+      <div className="cuadro d-flex  justify-content-center container pt-4">
         <form className="mb-3 pt-4 pb-4">
           <div className="row mb-3">
             <div className="form-group col">
@@ -118,6 +123,7 @@ const BuiCancelar = () => {
           </div>
         </form>
       </div>
+      <Footer/>
     </>
   );
 };

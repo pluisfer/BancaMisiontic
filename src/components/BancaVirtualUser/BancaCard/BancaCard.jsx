@@ -1,6 +1,8 @@
 import "./BancaCard.css";
 import { Link } from "react-router-dom";
-// import BancaHeader from "../BancaHeader/BancaHeader";
+import { BVCliente } from "../../BVCliente/BVCliente";
+import BancaHeader from "../BancaHeader/BancaHeader";
+import Footer from "../../footer/Footer";
 
 //importacion de imagenes
 import ImagenEascoger from "./ImgEscogerBancaVirtual.png";
@@ -12,7 +14,7 @@ import ImgFondo from "./ImgFondoBancas.jpg";
 const BancaCard = () => {
   return (
     <>
-      {/* <BancaHeader/> */}
+      <BancaHeader/>
       <div className="container-fluid section">
         <div className="container section-body justify-content-center d-flex">
           <img src={ImagenEascoger} alt="Imagen escoger banca virtual" />
@@ -30,12 +32,12 @@ const BancaCard = () => {
               <div className="card-text">
                 <p>Servicios de Fiduciaria</p>
                 <ul className="flex list-group">
-                  <Link to="/Fiducia">Solicitar Fiducuenta.</Link>
+                  <Link to="/BVCliente">Solicitar Fiducuenta.</Link>
 
-                  <Link to="/Transferencias">
+                  <Link to="/BuiTransferir">
                     Transferir dinero a otra fiducuenta.
                   </Link>
-                  <Link to="/CerrarCuentaFiduciaria ">
+                  <Link to="/BuiCancelar ">
                     CanceLar Fiducuenta.
                   </Link>
                 </ul>
@@ -51,7 +53,9 @@ const BancaCard = () => {
               <div className="card-extracto-text text-center">
                 <p className="text-danger m-3 me-1">Tu Extracto Bancario</p>
                 <ul>
-                  <li>Generar Extracto bancario</li>
+                  <li> <Link to="/BVExtractoCuentaPage ">
+                    Generar Extracto Bancario
+                  </Link></li>
                 </ul>
               </div>
             </div>
@@ -63,7 +67,7 @@ const BancaCard = () => {
               <div className="card-reclamo-text text-center">
                 <p className="text-danger m-3 me-1">Quejas y Reclamos</p>
                 <ul>
-                  <Link to="/qr">
+                  <Link to="/bvpQrForm">
                     Tienes una queja o reclamo en alguno de nuestros servicios
                     prestados.{" "}
                   </Link>
@@ -76,6 +80,7 @@ const BancaCard = () => {
           <img src={ImgFondo} alt="" className="imgFondo mb-4" />
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

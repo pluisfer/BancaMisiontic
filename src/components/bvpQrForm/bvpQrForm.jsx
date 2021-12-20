@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import qyr from "./qyr.png";
 
 import "./bvpQrForm.css";
+import BancaHeader from "../BancaVirtualUser/BancaHeader/BancaHeader";
+import Footer from "../footer/Footer";
 
 const BvpQrForm = () => {
     const tiposolicitudRef = useRef();
@@ -20,26 +22,26 @@ const BvpQrForm = () => {
 
     function QuejasReclamosEnviar() {
         //caputar los datos
-        const tiposolicitud = tiposolicitudRef.current.value;
-        const fechasolicitud = fechasolicitudRef.current.value;
-        const nombreapellido = nombreapellidoRef.current.value;
-        const tipodocumento = tipodocumentoRef.current.value;
-        const numdocumento = numdocumentoRef.current.value;
-        const numcuenta = numcuentaRef.current.value;
-        const tipocuenta = tipocuentaRef.current.value;
-        const fechatrans = fechatransRef.current.value;
-        const numtrans = numtransRef.current.value;
-        const descripciontrans = descripciontransRef.current.value;
-        const descripsoli = descripsoliRef.current.value;
+        const tipoSol = tiposolicitudRef.current.value;
+        const fechaSol = fechasolicitudRef.current.value;
+        const nomyap = nombreapellidoRef.current.value;
+        const tipoDoc = tipodocumentoRef.current.value;
+        const nDoc = numdocumentoRef.current.value;
+        const nCuenta = numcuentaRef.current.value;
+        const tipoCuenta = tipocuentaRef.current.value;
+        const fechaTrans = fechatransRef.current.value;
+        const nTransferencia = numtransRef.current.value;
+        const descTrans = descripciontransRef.current.value;
+        const descSol = descripsoliRef.current.value;
         fetch("http://localhost:8080/QuejasReclamos/enviar", {
             headers: { "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({ tiposolicitud, fechasolicitud, nombreapellido, tipodocumento, numdocumento, numcuenta, tipocuenta, fechatrans, numtrans, descripciontrans, descripsoli })
+            body: JSON.stringify({ tipoSol, fechaSol, nomyap, tipoDoc, nDoc, nCuenta, tipoCuenta, fechaTrans, nTransferencia, descTrans, descSol })
         }).then(res => res.json())
             .then(res => {
                 if (res.estado === "ok") {
                     setSuccess(true); //mensaje de confirmacion 
-                    setTimeout(() => setSuccess(false), 3000);
+                    setTimeout(() => setSuccess(false), 5000);
 
                 } else {
                     alert(res.msg)
@@ -55,8 +57,9 @@ const BvpQrForm = () => {
 
     return (
         <>
+        <BancaHeader/>
             <div className="navbar navbar-expand-lg ms-4 me-4">
-                <Link className="btn btn-lg m-2 fs-5 p-0 pb-1 pt-1 fw-bolder" id="regresar-btn" to="/qr">
+                <Link className="btn btn-lg m-2 fs-5 p-0 pb-1 pt-1 fw-bolder" id="regresar-btn" to="/Clientes">
                     Regresar
                 </Link>
                 <div className="d-grid gap-2 d-md-block ms-3 me-5">
@@ -66,11 +69,7 @@ const BvpQrForm = () => {
                     Fromulario de Peticion, Queja o Reclamo
                 </div>
             </div>
-            <div className="container">
-                {success && <div className="container">
-                    <p>solicitud enviada</p>
-                </div>}
-            </div>
+
             <form className="ms-5 me-5 ps-5 pe-5 mb-3">
                 <div className="row mb-3">
                     <div className="form-group col">
@@ -143,6 +142,11 @@ const BvpQrForm = () => {
                         <textarea className="form-control" rows="5" id="descripcion-s" ref={descripsoliRef}></textarea>
                     </div>
                 </div>
+                <div className="container">
+                    {success && <div className="container">
+                        <p>solicitud enviada</p>
+                    </div>}
+                </div>
                 <div className="row">
                     <p className="fw-lighter text-center">En caso de que sea un queja por transaccion fraudulenta; digite la casilla del valor de la transaccion.</p>
                 </div>
@@ -150,6 +154,7 @@ const BvpQrForm = () => {
                     <button type="submit" className="btn btn-danger m-2 fs-5 p-0 pb-1 pt-1 fw-bolder" onClick={QuejasReclamosEnviar}>Enviar</button>
                 </div>
             </form>
+            <Footer/>
         </>
     );
 }

@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Navbar from "./NavbarBui";
+
 
 import "./buiTransferir.css";
+import Footer from "../footer/Footer";
+import Navbar from "../BuiTransferir/NavbarBui";
+import HeaderUserInterno from "../HeaderUserInterno/HeaderUserInterno";
 
 const BuiTransferir = () => {
   return (
     <>
-      <Navbar />
-      <div className="cuadro">
+    <HeaderUserInterno/>
+    <Navbar />
+      <div className="cuadro mt-3 d-flex  justify-content-around container">
         <form className="ms-5 me-5 ps-5 pe-5 mb-3 pt-4 pb-4" id="formBui">
           <div className="row mb-3">
             <div className="form-group col">
@@ -55,7 +59,10 @@ const BuiTransferir = () => {
           </div>
         </form>
       </div>
+
+      <Footer />
     </>
+
   );
 };
 export default BuiTransferir;
