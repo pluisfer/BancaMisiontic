@@ -15,9 +15,9 @@ const navbar = () => {
           <Link to="/Login" className="btn btn-danger m-2">
             Login
           </Link>
-          {/* <Link to="/Registrarse" className="btn btn-danger m-2">
-            Registrate
-          </Link> */}
+          <Link to="/Login" className="btn btn-danger m-2">
+            Logout
+          </Link>
           <Link to="/" className="btn btn-danger m-2">
             Inicio
           </Link>
