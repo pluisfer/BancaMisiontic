@@ -4,7 +4,6 @@ import RectanguloGenerarExtracto from '../RectanguloGenerarExtracto';
 import BancaHeader from '../../BancaVirtualUser/BancaHeader/BancaHeader';
 import BotonRegresar from '../BotonRegresar';
 import GenerarExtractoTitulo from '../GenerarExtractoTitulo';
-import ExtractoProductoSel from '../BVExtracto_Cuenta/ExtractoProductoSel';
 import Footer from '../../footer/Footer';
 
 

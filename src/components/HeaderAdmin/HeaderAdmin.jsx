@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //importacion de imagenes
 import Logo from "./logobanco.png";
 
-export default function HeaderAdmin() {
+export default function HeaderAdminNav() {
     return (
         <nav className="navbar navbar-light bg-light">
             <div className="container-fluid p-2 d-flex">

@@ -13,7 +13,6 @@ import BuiCancelar from "./components/BuicancelarProducto/BuiCancelar";
 import BuiTransferir from "./components/BuiTransferir/BuiTransferir";
 import BuiResponder from "./components/BuiResponder/BuiResponder";
 import NotFoundPage from "./components/pages/NotFoundPage";
-import Layout from "./components/Layout/Layout";
 import BvpQrForm from "./components/bvpQrForm/bvpQrForm";
 import BVExtractoCuentaPage from "./components/BVP Extracto/BVExtracto_Cuenta/BVExtractoCuentaPage";
 import DetalleProducto from "./components/BVP Extracto/BVExtracto/DetalleProducto";
@@ -22,16 +21,15 @@ import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
 import BVCliente from "./components/BVCliente/BVCliente";
 import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/BVExtractoFormatoPage";
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
-import HeaderAdmin from "./components/HeaderAdmin/HeaderAdmin";
-
+import HeaderAdminNav from "./components/HeaderAdmin/HeaderAdmin";
 
 
 
 const App = () => {
   return (
     <>
-    <Router>
-     
+      <Router>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
@@ -51,13 +49,13 @@ const App = () => {
           <Route path="/BVCliente" element={<BVCliente />} />
           <Route path="/BVExtractoFormatoPage" element={<BVExtractoFormatoPage />} />
           <Route path="/HeaderUserInterno" element={<HeaderUserInterno />} />
-          <Route path="/HeaderAdmin" element={<HeaderAdmin />} />
+          <Route path="/HeaderAdminNav" element={<HeaderAdminNav />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-    </Router>
-    <Router>
+      </Router>
+      <Router>
 
-    </Router>
+      </Router>
     </>
   );
 };
