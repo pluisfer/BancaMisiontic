@@ -84,3 +84,8 @@
     margin-top: 65px;
     margin-bottom: 65px;
 }
+
+.secction-componente{
+    max-height: 500px;
+    overflow: scroll;
+}

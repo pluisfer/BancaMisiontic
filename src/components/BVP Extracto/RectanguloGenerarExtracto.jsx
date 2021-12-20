@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 import "./Estilos.css";
 import rectangle from './Rectangle 26.png';
 
@@ -23,7 +25,15 @@ export default function RectanguloGenerarExtracto() {
                 <div className="container">
                     <div className="row">
                         <div className="gnr_ext_bnc">
-                            <a href="">Generar Extracto Bancario</a>
+                          <li><Link  to="/BVExtractoCuentaPage">
+                            Generar Extracto
+                        </Link></li>
+                        <li><Link  to="/DetalleProducto">
+                            Mis productos
+                        </Link></li>
+                        <li><Link  to="/BVExtractoFormatoPage">
+                          Lista
+                        </Link></li>
                         </div>
                     </div>
                 </div>

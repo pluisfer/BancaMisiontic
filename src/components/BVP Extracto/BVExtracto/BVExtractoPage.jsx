@@ -1,6 +1,6 @@
 import React from 'react';
-import BancaHeader from '../../BancaHeader/BancaHeader.jsx'
-import Footer from '../../Footer/Footer.js'
+import BancaHeader from '../../BancaVirtualUser/BancaHeader/BancaHeader.jsx';
+
 import BotonRegresar from '../BotonRegresar.jsx'
 import GenerarExtractoTitulo from '../GenerarExtractoTitulo.jsx'
 import RectanguloGenerarExtracto from '../RectanguloGenerarExtracto.jsx'
@@ -28,7 +28,6 @@ export default function BVExtractoPage() {
                         </div>
                     </div>
                 </div>
-            <Footer />
         </>
     );
 }
