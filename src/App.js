@@ -24,14 +24,10 @@ import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
 import HeaderAdmin from "./components/HeaderAdmin/HeaderAdmin";
 
-
-
-
 const App = () => {
   return (
     <>
-    <Router>
-     
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
@@ -44,20 +40,24 @@ const App = () => {
           <Route path="/BuiTransferir" element={<BuiTransferir />} />
           <Route path="/BuiResponder" element={<BuiResponder />} />
           <Route path="/bvpQrForm" element={<BvpQrForm />} />
-          <Route path="/BVExtractoCuentaPage" element={<BVExtractoCuentaPage />} />
+          <Route
+            path="/BVExtractoCuentaPage"
+            element={<BVExtractoCuentaPage />}
+          />
           <Route path="/DetalleProducto" element={<DetalleProducto />} />
           <Route path="/BVExtractoPage" element={<BVExtractoPage />} />
           <Route path="/CrearFiduCuenta" element={<CrearFiduCuenta />} />
           <Route path="/BVCliente" element={<BVCliente />} />
-          <Route path="/BVExtractoFormatoPage" element={<BVExtractoFormatoPage />} />
+          <Route
+            path="/BVExtractoFormatoPage"
+            element={<BVExtractoFormatoPage />}
+          />
           <Route path="/HeaderUserInterno" element={<HeaderUserInterno />} />
           <Route path="/HeaderAdmin" element={<HeaderAdmin />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-    </Router>
-    <Router>
-
-    </Router>
+      </Router>
+      <Router></Router>
     </>
   );
 };
