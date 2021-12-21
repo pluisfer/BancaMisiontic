@@ -8,34 +8,27 @@ import { useRef } from "react";
 function InicioSesion() {
   // verificar que este logeado el usuarios
 
-  const nomRef = useRef();
-  const passRef = useRef();
-
+  const host = 'http://localhost:8080';
   function login() {
-    //capturar los datos usu/pass
-    const request = {
-      nombre: nomRef.current.value,
-      password: passRef.current.value,
-    };
-    console.log(request);
-    //consumir API Login
-    fetch("http://localhost:8080/Login", {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(request),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        //alert(res.message);
-        if (res.message === "Successful Login!!") {
-          window.location.href = "/Dashboard";
-        } else {
-          alert(res.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      const usuario = document.getElementById("user").value;
+      const contraseña = document.getElementById("pass").value;
+      fetch(`${host}/login`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ usuario, contraseña })
+      }).then(data => data.json())
+          .then(data => {
+            if (data.estado === "ok") {
+              {
+              localStorage.setItem("token", data.token);
+              localStorage.setItem("usuario", data.usuario);
+              window.location.href = data.url 
+              }
+            } else if (data.estado === "error") {
+              alert(data.msg)
+              } else
+              alert("error fue nacer");
+          })
   }
 
   const Usuario = "Usuario";
@@ -50,7 +43,7 @@ function InicioSesion() {
               <label for="staticEmail" className="col-sm-3 col-form-label">
                 {Usuario}
               </label>
-              <input ref={nomRef} type="text" className="form-control"></input>
+              <input type="text" id="user" className="form-control"></input>
             </div>
 
             <div className="form-input-item mb-4">
@@ -58,8 +51,8 @@ function InicioSesion() {
                 {Contraseña}
               </label>
               <input
-                ref={passRef}
                 type="password"
+                id="pass"
                 className="form-control"
               ></input>
             </div>
