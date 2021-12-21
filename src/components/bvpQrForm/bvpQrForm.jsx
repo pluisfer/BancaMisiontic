@@ -19,6 +19,8 @@ const BvpQrForm = () => {
     const descripciontransRef = useRef();
     const descripsoliRef = useRef();
     const [success, setSuccess] = useState(false)
+    const token = localStorage.getItem("token");
+    const usuario = localStorage.getItem("usuario");
 
     function QuejasReclamosEnviar() {
         //caputar los datos
@@ -34,14 +36,14 @@ const BvpQrForm = () => {
         const descTrans = descripciontransRef.current.value;
         const descSol = descripsoliRef.current.value;
         fetch("http://localhost:8080/QuejasReclamos/enviar", {
-            headers: { "content-type": "application/json" },
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({ tipoSol, fechaSol, nomyap, tipoDoc, nDoc, nCuenta, tipoCuenta, fechaTrans, nTransferencia, descTrans, descSol })
+            body: JSON.stringify({ usuario, tipoSol, fechaSol, nomyap, tipoDoc, nDoc, nCuenta, tipoCuenta, fechaTrans, nTransferencia, descTrans, descSol })
         }).then(res => res.json())
             .then(res => {
                 if (res.estado === "ok") {
-                    setSuccess(true); //mensaje de confirmacion 
-                    setTimeout(() => setSuccess(false), 5000);
+                    alert(res.msg)
 
                 } else {
                     alert(res.msg)

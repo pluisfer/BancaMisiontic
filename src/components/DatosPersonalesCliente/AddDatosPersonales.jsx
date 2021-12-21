@@ -29,15 +29,20 @@ export default function  AddDatosPersonales() {
         const correo = correoRef.current.value;
         const ciudad = ciudadRef.current.value;
         const direccion = direccionRef.current.value;
+        const token = localStorage.getItem("token");
+        const usuario = localStorage.getItem("usuario");
+
         fetch("http://localhost:8080/DatosPersonales/guardar",{
-            headers: {"content-type": "application/json"},
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({ nombre, apellidos, tipoDoc, doc, fechaNac, fechaDoc, correo, ciudad, direccion})
+            body: JSON.stringify({ usuario, nombre, apellidos, tipoDoc, doc, fechaNac, fechaDoc, correo, ciudad, direccion})
         }).then(res => res.json())
             .then(res => {
                 if (res.estado === "ok") {
                     setSuccess(true); //mensaje de confirmacion 
                     setTimeout(() => setSuccess(false), 3000);
+                    window.location.href = res.url
                     
                 }else{
                     alert(res.msg)

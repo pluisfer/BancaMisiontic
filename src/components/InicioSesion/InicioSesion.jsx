@@ -59,18 +59,6 @@ function InicioSesion() {
                 className="form-control"
               ></input>
             </div>
-            <div className="mb-3 row">
-              <label for="inputTipo" className="col-sm-3 col-form-label">
-                Tipo de Usuario:
-              </label>
-              <div className="col-sm-9">
-                <select className="form-control">
-                  <option value="1">Cliente</option>
-                  <option value="2">Usuario Interno</option>
-                  <option value="3">Administrador</option>
-                </select>
-              </div>
-            </div>
           </div>
           <div class="container">
             <div class="row">
