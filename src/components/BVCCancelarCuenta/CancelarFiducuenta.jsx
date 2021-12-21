@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import "./CancelarFidu.css";
-import {Lateral} from '../BVCCrearFiduCuenta/Lateral/Lateral';
+import Lateral from '../BVCCrearFiduCuenta/Lateral/Lateral';
 
 
 
 function CancelarFiducuenta () {
+
+    const host = 'http://localhost:8080';
+    const [listadoCuentas, setListadoCuentas] = useState([]);
+    const [recarga, setRecarga] = useState([]);
+    const token = localStorage.getItem("token");
+    const usuario = localStorage.getItem("usuario");
+
+
+    useEffect(() => {
+        fetch(`${host}/cerrarCuentaPrevio`, {
+            method: "POST",
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" },
+            body: JSON.stringify({ usuario })
+        }).then(res => res.json())
+            .then(res => {
+                if (res.estado === "ok")
+                    setListadoCuentas(res.data);
+                else {
+                    alert(res.msg)
+                }
+            })
+    }, [recarga])
+    
+    function CerrarCuenta() {
+        const cuenta = document.getElementById('CancelarDesplegable').value;
+        fetch(`${host}/CerrarCuenta`, {
+            method: "POST",
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" },
+            body: JSON.stringify({  _id: cuenta })
+        }).then(data => data.json())
+            .then(data => {
+                if (data.estado === "ok") {
+                    alert(data.msg);
+                    setRecarga(!recarga)
+                } else {
+                    alert(data.msg);
+                }
+            })
+    }
+
     return (
         <>
         <div className="paragraphs">
@@ -23,10 +65,10 @@ function CancelarFiducuenta () {
                       <div className="mb-3 row">
                       <label for="inputCuenta" className="col-sm-3 col-form-label">Seleccionar Cuenta:</label>
                           <div className="col-sm-9">
-                          <select className="form-controlCan"> 
-                            <option value="1">Opcion 1</option> 
-                            <option value="2">Opcion 2</option> 
-                            <option value="3">Opcion 3</option> 
+                          <select id="CancelarDesplegable" className="form-controlCan"> 
+                            {
+                                listadoCuentas.map(p => <option key={p._id} value={p._id}>{p.nCuenta}</option>)
+                            } 
                           </select>
                           </div>
                           </div>
@@ -44,7 +86,7 @@ function CancelarFiducuenta () {
                                 </div>
                                 <div class="row">
                               <div class="col-md-6  form-group text-center">
-                                  <button type="button" class="btn btn-danger">Aceptar</button>
+                                  <button type="button" class="btn btn-danger" onClick={CerrarCuenta}>Aceptar</button>
                               </div>
                               <div class="col-md-6 form-group text-center">
                                   <button type="button" class="btn btn-danger">Cancelar</button>
