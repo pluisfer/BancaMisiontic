@@ -12,6 +12,7 @@ function TransfDineroFiduCuenta () {
     const token = localStorage.getItem("token");
     const usuario = localStorage.getItem("usuario");
     const [listadoCuentas, setListadoCuentas] = useState([]);
+    const [Variable, setVariable] = useState([]);
 
     useEffect(() => {
         fetch(`${host}/Previo`, {
@@ -27,7 +28,7 @@ function TransfDineroFiduCuenta () {
                     alert(res.msg)
                 }
             })
-    }, [])
+    }, [Variable])
 
     function Trasnferir() {
         const origen = document.getElementById("TransDesplegable").value;
@@ -43,6 +44,9 @@ function TransfDineroFiduCuenta () {
             .then(data => {
                 if (data.estado === "ok") {
                     alert(data.msg);
+                    setVariable(!Variable);
+                    document.getElementById("TransMonto").value = "";
+                    document.getElementById("TransDestino").value = "";
                 } else {
                     alert(data.msg);
                 }

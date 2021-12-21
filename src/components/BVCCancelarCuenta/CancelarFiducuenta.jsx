@@ -42,6 +42,7 @@ function CancelarFiducuenta () {
             .then(data => {
                 if (data.estado === "ok") {
                     alert(data.msg);
+                    document.getElementById("exampleFormControlTextarea1").value = "";
                     setRecarga(!recarga)
                 } else {
                     alert(data.msg);
@@ -84,9 +85,6 @@ function CancelarFiducuenta () {
                             </div> 
                   </div>
                         <div className="form-input-item mb-4">
-                              <div className="col text-center">
-                                <h5>La aprobacion de su solicitud será enviada a su correo electronico.</h5> 
-                                </div>
                                 </div>
                                 <div class="row">
                               <div class="col-md-6  form-group text-center">

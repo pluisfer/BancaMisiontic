@@ -25,6 +25,10 @@ function CrearFiduCuenta() {
             .then(data => {
                 if (data.estado === "ok") {
                     alert(data.msg);
+                    document.getElementById("CrearDesplegable").value = "Opcion 1";
+                    document.getElementById("CrearCuenta").value = "";
+                    document.getElementById("CrearMonto").value = "";
+                    document.getElementById("TipoCuenta").value = "Ahorros";
                 } else {
                     alert(data.msg);
                 }
@@ -53,14 +57,17 @@ function CrearFiduCuenta() {
                                         <label for="inputCuenta" className="col-sm-3 col-form-label">Selecciona tu Fondo de Inversion:</label>
                                         <div className="col-sm-9">
                                             <select id="CrearDesplegable" className="form-controlS">
-                                                <option value="1">Opcion 1</option>
-                                                <option value="2">Opcion 2</option>
-                                                <option value="3">Opcion 3</option>
+                                                <option value="Opcion 1">Opcion 1</option>
+                                                <option value="Opcion 2">Opcion 2</option>
+                                                <option value="Opcion 3">Opcion 3</option>
                                             </select>
                                         </div>
                                         <div className="form-input-item mb-4">
                                             <label for="inputCuenta" className="col-sm-3 col-form-label">Tipo Cuenta: </label>
-                                            <input type="text" id="TipoCuenta" className="form-controlS"></input>
+                                            <select id="TipoCuenta" className="form-controlS">
+                                                <option value="Ahorros">Ahorros</option>
+                                                <option value="Corriente">Corriente</option>
+                                            </select>
                                         </div>
                                         <div className="form-input-item mb-4">
                                             <label for="inputCuenta" className="col-sm-3 col-form-label">Producto Origen: </label>
