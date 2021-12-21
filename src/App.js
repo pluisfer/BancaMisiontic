@@ -21,28 +21,22 @@ import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
 import BVCliente from "./components/BVCliente/BVCliente";
 import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/BVExtractoFormatoPage";
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
-<<<<<<< HEAD
-import HeaderAdmin from "./components/HeaderAdmin/HeaderAdmin";
-=======
-import HeaderAdminNav from "./components/HeaderAdmin/HeaderAdmin";
-
-
->>>>>>> e9c8b7474c5f3d3a61dd9c9a0b1d169fe178db2f
+import HeaderAdminNav from "./components/HeaderAdminNav/HeaderAdminNav";
 
 const App = () => {
   return (
     <>
       <Router>
-<<<<<<< HEAD
-=======
-
->>>>>>> e9c8b7474c5f3d3a61dd9c9a0b1d169fe178db2f
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Registrarse" element={<Registrarse />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Clientes" element={<Clientes />} />
+          <Route path="/Navbar" element={<Navbar />} />
+          <Route path="/Footer" element={<Footer />} />
+          <Route path="/Registrarse" element={<Registrarse />} />
+          <Route path="/Dashboard" element={< Dashboard />} />
+          
+          
           <Route path="/UsuarioInterno" element={<UsuarioInterno />} />
           <Route path="/DashUserPage" element={<DashUserPage />} />
           <Route path="/BuiCancelar" element={<BuiCancelar />} />
@@ -66,13 +60,6 @@ const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
-<<<<<<< HEAD
-      <Router></Router>
-=======
-      <Router>
-
-      </Router>
->>>>>>> e9c8b7474c5f3d3a61dd9c9a0b1d169fe178db2f
     </>
   );
 };
