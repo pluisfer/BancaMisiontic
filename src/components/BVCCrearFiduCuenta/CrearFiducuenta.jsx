@@ -8,16 +8,19 @@ import Lateral from "./Lateral/Lateral"
 function CrearFiduCuenta() {
 
     const host = 'http://localhost:8080';
+
     function CrearCuenta() {
         const fondo = document.getElementById("CrearDesplegable").value;
         const origen = document.getElementById("CrearCuenta").value;
         const valor = document.getElementById("CrearMonto").value;
         const tipo = document.getElementById("TipoCuenta").value;
-        const usuario = "cliente"
-        fetch(`${host}/crearCuenta`, {
+        const token = localStorage.getItem("token");
+        const usuario = localStorage.getItem("usuario"); 
+        fetch(`${host}/CrearCuenta`, {
             method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ usuario, fondoInversion: fondo, tipoCuenta: tipo, nCuenta: origen, valor })
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" }, 
+            body: JSON.stringify({ usuario, fondoInversion:fondo, tipoCuenta:tipo, nCuenta:origen, valor })
         }).then(data => data.json())
             .then(data => {
                 if (data.estado === "ok") {
