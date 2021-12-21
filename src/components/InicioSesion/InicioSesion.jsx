@@ -1,8 +1,10 @@
 import "./inicioSesion.css";
 import React from "react";
 import ImgEnvio from "./img/ImgEnvio.jpg";
+import Navbar from "../navegacion/Navbar";
 // import axios from "axios";
 import { useRef } from "react";
+import Footer from "../footer/Footer";
 // import {Redirect}  from "react-router-dom";
 
 function InicioSesion() {
@@ -41,6 +43,8 @@ function InicioSesion() {
   const Usuario = "Usuario";
   const Contraseña = "Contraseña";
   return (
+    <>
+    <Navbar/>
     <div className="container contenedor d-flex  justify-content-center align-items-center">
       <div className="card-form-container  mb-5">
         <div className="card-form-body">
@@ -123,6 +127,8 @@ function InicioSesion() {
         </div>
       </div>
     </div>
+    <Footer></Footer>
+    </>
   );
 }
 

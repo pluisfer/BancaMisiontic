@@ -5,10 +5,14 @@ import imagen5 from "../../assets/fondocontent.jpg";
 import imagen6 from "../../assets/fondocontent3.jpg";
 import { Link } from "react-router-dom";
 import Cards from "../../components/card/Cards";
+import Navbar from "../navegacion/Navbar";
+import Footer from "../footer/Footer";
+
 
 const HomeFondo = () => {
   return (
     <>
+  <Navbar/>
       <section className="container">
         <img className="d-block w-100" src={imagen4} alt="" />
       </section>
@@ -44,6 +48,7 @@ const HomeFondo = () => {
           <img className=" rounded  float-left w-50 p-4" src={imagen6} alt="" />
         </div>
       </section>
+      <Footer/>
     </>
   );
 };
