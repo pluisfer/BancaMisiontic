@@ -1,7 +1,8 @@
 import React, {useRef, useState} from "react"
 import './DatosPC.css'
 import { Link } from "react-router-dom";
-
+import Navbar from "../navegacion/Navbar";
+import Footer from "../footer/Footer";
 
 
 export default function  AddDatosPersonales() {
@@ -49,12 +50,10 @@ export default function  AddDatosPersonales() {
 
  
     return (
+        <>
+        <Navbar/>
         <div className="container contenedor d-flex  justify-content-center align-items-center mt-2 mb-5">
             <div className="card-form-container  mb-5">
-                <div className="card-form-btn">
-                <Link to="/RegistroCliente"><button className="btn form-btn">Registro Usuarios</button></Link>
-                <Link to="/RegistroDatosPersonales"><button className="btn form-btn" >Ingreso Datos personales</button></Link>
-                </div>
                 <div className="card-form-body">
                 <h4>Datos personales del Cliente</h4>
                     <form action="">
@@ -121,5 +120,7 @@ export default function  AddDatosPersonales() {
                 </div>
             </div>
         </div>
+        <Footer/>
+        </>
     )
 }

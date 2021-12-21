@@ -4,7 +4,7 @@ import "./BarraDash.css";
 export const BarraDash = () => {
   const userRef = useRef(); //document.getElementById("nom")
   const contraRef = useRef();
-  const contrafRef = useRef();
+
   const roleRef = useRef();
   const [success, setSuccess] = useState(false);
 
@@ -12,13 +12,12 @@ export const BarraDash = () => {
     //Capturar los datos 
     const usuario = userRef.current.value
     const contraseña = contraRef.current.value;
-    const contraseñaconfirm = contrafRef.current.value;
     const rol = roleRef.current.value;
     //Consumir la API Guardar
     fetch("http://localhost:8080/Usuario/Registrar", {
       headers: { "content-type": "application/json" },
       method: "POST",
-      body: JSON.stringify({ usuario, contraseña, contraseñaconfirm, rol })
+      body: JSON.stringify({ usuario, contraseña, rol })
     }).then(res => res.json())
       .then(res => {
         if (res.estado === "ok") {
@@ -26,7 +25,6 @@ export const BarraDash = () => {
           setTimeout(() => setSuccess(false), 8000);
           userRef.current.value = "";
           contraRef.current.value = "";
-          contrafRef.current.value = "";
           roleRef.current.value = "";
         } else {
           alert(res.msg); //Mostrar mensaje de respuesta
@@ -81,23 +79,6 @@ export const BarraDash = () => {
 
             <div className="form-group row mt-3">
               <label
-                for="inputPassword"
-                className="col-sm-2 col-form-label font-weight-bold"
-              >
-                Repetir Contraseña
-              </label>
-              <div className="col-sm-10">
-                <input
-                  type="password"
-                  className="form-control bg-input-color"
-                  id="inputPassword"
-                  ref={contrafRef}
-                />
-              </div>
-            </div>
-
-            <div className="form-group row mt-3">
-              <label
                 for="inputTipo"
                 className="col-sm-2 col-form-label font-weight-bold"
               >
@@ -105,9 +86,9 @@ export const BarraDash = () => {
               </label>
               <div className="col-sm-10">
                 <select className="form-control bg-input-color" ref={roleRef}>
-                  <option value="1">Cliente</option>
-                  <option value="2">Usuario Interno</option>
-                  <option value="3">Administrador</option>
+                  <option value="c">Cliente</option>
+                  <option value="ui">Usuario Interno</option>
+                  <option value="a">Administrador</option>
                 </select>
               </div>
             </div>

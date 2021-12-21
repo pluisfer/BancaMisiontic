@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import avatar from "./img/undraw_male_avatar_323b.svg";
 import gestion from "./img/undraw_progressive_app_m-9-ms.svg";
 import "./dash.css";
-import HeaderAdmin from "../HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "../HeaderAdminNav/HeaderAdminNav";
 import Footer from "../footer/Footer";
 
 export const Dashb = () => {
   return (
     <>
-    <HeaderAdmin/>
+      <HeaderAdmin />
       <div className="d-flex flex-row-reverse">
         <p className="bg-color p-2 text-white">Administrador</p>
       </div>
@@ -30,7 +30,10 @@ export const Dashb = () => {
             </Link>
           </div>
           <div className="btn-UI col  m-4">
-            <Link className="align-self-center p-2 d-flex flex-column" to="/">
+            <Link
+              className="align-self-center p-2 d-flex flex-column"
+              to="/ModificarUsuarios"
+            >
               <span className="align-self-center p-2 font-weight-bold">
                 Gestion Plataforma
               </span>
@@ -46,7 +49,7 @@ export const Dashb = () => {
         </div>
       </div>
       <div className="cuarto-circulo d-flex flex-row-reverse"></div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

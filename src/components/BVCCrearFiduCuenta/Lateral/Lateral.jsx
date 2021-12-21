@@ -27,15 +27,15 @@ const Lateral = () => {
                                 Solicitar Fiducuenta.
                             </Link>
 
-                            <Link to="/BuiTransferir">
+                            <Link to="/TransfDineroFiduCuenta">
                                 Transferir dinero a otra fiducuenta.
                             </Link>
-                            <Link to="/BuiCancelar ">
+                            <Link to="/CancelarFiduCuenta ">
                                 CanceLar Fiducuenta.
                             </Link>
                             
                             <Link to="/DetalleProducto">
-                                Ver cuentas Creadas
+                              Extracto
                             </Link>
 
                         </ul>

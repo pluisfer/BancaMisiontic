@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import BancaHeader from '../../BancaVirtualUser/BancaHeader/BancaHeader.jsx';
 import Footer from '../../footer/Footer.jsx';
 import BotonRegresar from '../BotonRegresar.jsx'

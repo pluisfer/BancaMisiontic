@@ -4,7 +4,7 @@ import "./dashUser.css";
 import ImgBVAdmon from "./img/ImgBVAdmon.png";
 import ImgBVAportal from "./img/ImgBVAdmonportal.png";
 import { BarraDash } from "../../components/barraDash/BarraDash";
-import HeaderAdmin from "../HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "../HeaderAdminNav/HeaderAdminNav";
 import Footer from "../footer/Footer";
 
 export const DashUser = () => {
@@ -13,7 +13,10 @@ export const DashUser = () => {
       <HeaderAdmin />
       <div className="container-fluid">
         <div className="row justify-content-between">
-          <Link className="btn btn-danger col-2 align-self-start" to="/Dashboard">
+          <Link
+            className="btn btn-danger col-2 align-self-start"
+            to="/Dashboard"
+          >
             Volver Atrás
           </Link>
         </div>
@@ -37,12 +40,12 @@ export const DashUser = () => {
                 height="40"
               />
             </i>
-            Crear Usuario interno
+            Crear Usuarios
           </Link>
           <Link
             type="button"
             className="btn btn-secondary"
-            to="/DashUserPage/Crear"
+            to="/ModificarUsuarios"
           >
             <i>
               <img

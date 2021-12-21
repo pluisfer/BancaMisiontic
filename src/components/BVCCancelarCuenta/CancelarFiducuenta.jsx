@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CancelarFidu.css";
 import Lateral from '../BVCCrearFiduCuenta/Lateral/Lateral';
-
+import imgCancelarCuentaBVPF from "./ImgCancelarCuentaBVPF.jpg";
+import BancaHeader from "../BancaVirtualUser/BancaHeader/BancaHeader";
+import Footer from "../footer/Footer";
 
 
 function CancelarFiducuenta () {
@@ -21,13 +23,13 @@ function CancelarFiducuenta () {
             body: JSON.stringify({ usuario })
         }).then(res => res.json())
             .then(res => {
-                if (res.estado === "ok")
+                if (res.estado === "ok"){
                     setListadoCuentas(res.data);
-                else {
+               } else {
                     alert(res.msg)
                 }
             })
-    }, [recarga])
+    }, [recarga]);
     
     function CerrarCuenta() {
         const cuenta = document.getElementById('CancelarDesplegable').value;
@@ -49,11 +51,13 @@ function CancelarFiducuenta () {
 
     return (
         <>
+        <BancaHeader/>
         <div className="paragraphs">
             <div class="row">
                 <div className="tituloCan-sm-3 ">
-                <div className="content-heading"><img classNameName="imagCF" alt="Imagen"/></div>
-                    <p> Crea tu Fiducuenta​ en pocos pasos</p>
+                <div className="content-heading">
+                    <img classNameName="imagCF" alt="Imagen" src={imgCancelarCuentaBVPF} /></div>
+                    <p> Crea tu Fiducuenta en pocos pasos</p>
                 </div>
             </div>
             </div>
@@ -95,6 +99,7 @@ function CancelarFiducuenta () {
                          </div>     
                          </div>         
         </div>
+        <Footer/>
         </>
     )
 }
