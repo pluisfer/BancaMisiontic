@@ -14,7 +14,7 @@ import ImgFondo from "./ImgFondoBancas.jpg";
 const BancaCard = () => {
   return (
     <>
-      <BancaHeader/>
+      <BancaHeader />
       <div className="container-fluid section">
         <div className="container section-body justify-content-center d-flex">
           <img src={ImagenEascoger} alt="Imagen escoger banca virtual" />
@@ -34,10 +34,10 @@ const BancaCard = () => {
                 <ul className="flex list-group">
                   <Link to="/BVCliente">Solicitar Fiducuenta.</Link>
 
-                  <Link to="/BuiTransferir">
+                  <Link to="/TransfDineroFiduCuenta">
                     Transferir dinero a otra fiducuenta.
                   </Link>
-                  <Link to="/BuiCancelar ">
+                  <Link to="/CancelarFiduCuenta">
                     CanceLar Fiducuenta.
                   </Link>
                 </ul>
@@ -80,7 +80,7 @@ const BancaCard = () => {
           <img src={ImgFondo} alt="" className="imgFondo mb-4" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

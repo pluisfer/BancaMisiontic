@@ -1,16 +1,15 @@
 .contenedor{
     place-items: center;
-    height: 100vh;
+    height: 115vh;
 
-      
     
-
 }
 
 .card-form-container{
     width: 900px;
     height:650px;
     margin: 80px;
+    margin-bottom: 200px;
 }
 
 .card-form-btn{

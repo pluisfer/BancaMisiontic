@@ -21,8 +21,10 @@ import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
 import BVCliente from "./components/BVCliente/BVCliente";
 import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/BVExtractoFormatoPage";
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
-import HeaderAdminNav from "./components/HeaderAdmin/HeaderAdmin";
+import HeaderAdminNav from "./components/HeaderAdminNav/HeaderAdminNav";
+import TransfDineroFiduCuenta from "./components/BVCTransferir/TransfDineroFiduCuenta";
 import CancelarFiducuenta from "./components/BVCCancelarCuenta/CancelarFiducuenta";
+
 
 
 const App = () => {
@@ -37,8 +39,7 @@ const App = () => {
           <Route path="/Footer" element={<Footer />} />
           <Route path="/Registrarse" element={<Registrarse />} />
           <Route path="/Dashboard" element={< Dashboard />} />
-          
-          
+          <Route path="/TransfDineroFiduCuenta" element={< TransfDineroFiduCuenta />} />
           <Route path="/UsuarioInterno" element={<UsuarioInterno />} />
           <Route path="/DashUserPage" element={<DashUserPage />} />
           <Route path="/BuiCancelar" element={<BuiCancelar />} />
