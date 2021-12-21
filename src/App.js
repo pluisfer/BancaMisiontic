@@ -24,6 +24,7 @@ import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno"
 import HeaderAdminNav from "./components/HeaderAdminNav/HeaderAdminNav";
 import CancelarFiducuenta from "./components/BVCCancelarCuenta/CancelarFiducuenta";
 import ModificarUsuarios from "./components/ModificarUsuarios/ModificarUsuarios";
+import TransfDineroFiduCuenta from "./components/BVCTransferir/TransfDineroFiduCuenta";
 
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/HeaderUserInterno" element={<HeaderUserInterno />} />
           <Route path="/HeaderAdminNav" element={<HeaderAdminNav />} />
           <Route path="/ModificarUsuarios" element={<ModificarUsuarios />} />
+          <Route path="/TransfDineroFiduCuenta" element={<TransfDineroFiduCuenta />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>

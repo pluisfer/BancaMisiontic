@@ -98,7 +98,7 @@ function TransfDineroFiduCuenta () {
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6  form-group text-center">
-                                            <button type="button" class="btn btn-danger">Enviar Transferencia</button>
+                                            <button type="button" class="btn btn-danger" onClick={Trasnferir}>Enviar Transferencia</button>
                                         </div>
                                         <div class="col-md-6 form-group text-center">
                                             <button type="button" class="btn btn-danger">Cancelar</button>
