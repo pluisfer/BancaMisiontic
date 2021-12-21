@@ -3,7 +3,6 @@ import React from "react";
 import ImgEnvio from "./img/ImgEnvio.jpg";
 import Navbar from "../navegacion/Navbar";
 // import axios from "axios";
-import { useRef } from "react";
 import Footer from "../footer/Footer";
 // import {Redirect}  from "react-router-dom";
 
@@ -21,11 +20,11 @@ function InicioSesion() {
       }).then(data => data.json())
           .then(data => {
             if (data.estado === "ok") {
-              {
+              
               localStorage.setItem("token", data.token);
               localStorage.setItem("usuario", data.usuario);
               window.location.href = data.url 
-              }
+              
             } else if (data.estado === "error") {
               alert(data.msg)
               } else

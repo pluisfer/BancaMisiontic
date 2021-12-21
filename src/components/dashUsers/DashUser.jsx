@@ -4,7 +4,7 @@ import "./dashUser.css";
 import ImgBVAdmon from "./img/ImgBVAdmon.png";
 import ImgBVAportal from "./img/ImgBVAdmonportal.png";
 import { BarraDash } from "../../components/barraDash/BarraDash";
-import HeaderAdmin from "../HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "../HeaderAdminNav/HeaderAdminNav";
 import Footer from "../footer/Footer";
 
 export const DashUser = () => {

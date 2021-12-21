@@ -32,9 +32,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Clientes" element={<Clientes />} />
+          <Route path="/Navbar" element={<Navbar />} />
+          <Route path="/Footer" element={<Footer />} />
           <Route path="/Registrarse" element={<Registrarse />} />
           <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/Clientes" element={<Clientes />} />
+
           <Route path="/UsuarioInterno" element={<UsuarioInterno />} />
           <Route path="/DashUserPage" element={<DashUserPage />} />
           <Route path="/BuiCancelar" element={<BuiCancelar />} />
@@ -60,7 +63,6 @@ const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
-      <Router></Router>
     </>
   );
 };
