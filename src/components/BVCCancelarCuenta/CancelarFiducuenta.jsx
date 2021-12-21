@@ -14,7 +14,7 @@ function CancelarFiducuenta () {
 
 
     useEffect(() => {
-        fetch(`${host}/cerrarCuentaPrevio`, {
+        fetch(`${host}/Previo`, {
             method: "POST",
             headers: { "authorization": `Bearer ${token}`,
                        "content-type": "application/json" },

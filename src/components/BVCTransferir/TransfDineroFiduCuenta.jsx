@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import "./TransfCuenta.css";
 import ImgTransDineroBVPF from './ImgTransDineroBVPF.jpg';
 import Lateral from "./Lateral/Lateral"
 
 
 function TransfDineroFiduCuenta () {
+
+    const host = 'http://localhost:8080';
+    const token = localStorage.getItem("token");
+    const usuario = localStorage.getItem("usuario");
+    const [listadoCuentas, setListadoCuentas] = useState([]);
+
+    useEffect(() => {
+        fetch(`${host}/Previo`, {
+            method: "POST",
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" },
+            body: JSON.stringify({ usuario })
+        }).then(res => res.json())
+            .then(res => {
+                if (res.estado === "ok")
+                    setListadoCuentas(res.data);
+                else {
+                    alert(res.msg)
+                }
+            })
+    }, [])
+
+    function Trasnferir() {
+        const origen = document.getElementById("TransDesplegable").value;
+        const montoDestino = parseInt(document.getElementById("TransMonto").value);
+        const monto = montoDestino*0.01+montoDestino;
+        const destino = document.getElementById("TransDestino").value;
+        fetch(`${host}/Transferencias`, {
+            method: "POST",
+            headers: { "authorization": `Bearer ${token}`,
+                       "content-type": "application/json" },
+            body: JSON.stringify({ usuario, origen, monto, montoDestino, destino })
+        }).then(data => data.json())
+            .then(data => {
+                if (data.estado === "ok") {
+                    alert(data.msg);
+                } else {
+                    alert(data.msg);
+                }
+            })
+    }
+
     return (
         <>
         <div className="paragraphs">
@@ -23,25 +65,21 @@ function TransfDineroFiduCuenta () {
                       <div className="mb-3 row">
                       <label for="inputCuenta" className="col-sm-3 col-form-label">Selecciona Cuenta de Origen:</label>
                           <div className="col-sm-9">
-                          <select className="form-controlTrs"> 
-                            <option value="1">Opcion 1</option> 
-                            <option value="2">Opcion 2</option> 
-                            <option value="3">Opcion 3</option> 
+                          <select id="TransDesplegable" className="form-controlTrs"> 
+                            {
+                                listadoCuentas.map(p => <option key={p._id} value={p._id}>{p.nCuenta}</option>)
+                            }
                           </select>
                           </div>
                       <div className="form-input-item mb-4">
                           <label for="inputCuenta" className="col-sm-3 col-form-label">Monto a Transferir: </label>
-                          <input type="text" className="form-controlTrs"></input>
+                          <input type="number" id="TransMonto" className="form-controlTrs"></input>
                           </div> 
                           <div className="form-input">
                       <div className="mb-3 row">
                       <label for="inputCuenta" className="col-sm-3 col-form-label">Selecciona Cuenta Destino:</label>
                           <div className="col-sm-9">
-                          <select className="form-controlTrs"> 
-                            <option value="1">Opcion 1</option> 
-                            <option value="2">Opcion 2</option> 
-                            <option value="3">Opcion 3</option> 
-                          </select>
+                          <input type="number" id="TransDestino" className="form-controlTrs"></input>
                           </div>
                           </div>
                           </div>
@@ -57,7 +95,7 @@ function TransfDineroFiduCuenta () {
                                 </div> 
                                 <div class="row">
                                   <div class="col-md-6  form-group text-center">
-                                      <button type="button" class="btn btn-danger">Enviar Transferencia</button>
+                                      <button type="button" class="btn btn-danger" onClick={Trasnferir()}>Enviar Transferencia</button>
                                   </div>
                                   <div class="col-md-6 form-group text-center">
                                       <button type="button" class="btn btn-danger">Cancelar</button>
