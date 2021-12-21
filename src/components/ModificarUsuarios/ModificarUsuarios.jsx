@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import HeaderAdmin from "../HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "../HeaderAdminNav/HeaderAdminNav";
 import Footer from "../footer/Footer";
 import "./ModUser.css";
 import ImgBVAdmon from "./img/ImgBVAdmon.png";

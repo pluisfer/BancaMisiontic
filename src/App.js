@@ -21,7 +21,7 @@ import CrearFiduCuenta from "./components/BVCCrearFiduCuenta/CrearFiducuenta";
 import BVCliente from "./components/BVCliente/BVCliente";
 import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/BVExtractoFormatoPage";
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
-import HeaderAdminNav from "./components/HeaderAdmin/HeaderAdmin";
+import HeaderAdminNav from "./components/HeaderAdminNav/HeaderAdminNav";
 import CancelarFiducuenta from "./components/BVCCancelarCuenta/CancelarFiducuenta";
 import ModificarUsuarios from "./components/ModificarUsuarios/ModificarUsuarios";
 
