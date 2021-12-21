@@ -9,7 +9,7 @@ import Footer from "../footer/Footer";
 export const Dashb = () => {
   return (
     <>
-    <HeaderAdmin/>
+      <HeaderAdmin />
       <div className="d-flex flex-row-reverse">
         <p className="bg-color p-2 text-white">Administrador</p>
       </div>
@@ -30,7 +30,10 @@ export const Dashb = () => {
             </Link>
           </div>
           <div className="btn-UI col  m-4">
-            <Link className="align-self-center p-2 d-flex flex-column" to="/">
+            <Link
+              className="align-self-center p-2 d-flex flex-column"
+              to="/ModificarUsuarios"
+            >
               <span className="align-self-center p-2 font-weight-bold">
                 Gestion Plataforma
               </span>
@@ -46,7 +49,7 @@ export const Dashb = () => {
         </div>
       </div>
       <div className="cuarto-circulo d-flex flex-row-reverse"></div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

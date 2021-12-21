@@ -23,7 +23,7 @@ import BVExtractoFormatoPage from "./components/BVP Extracto/BVExtracto_Formato/
 import HeaderUserInterno from "./components/HeaderUserInterno/HeaderUserInterno";
 import HeaderAdminNav from "./components/HeaderAdmin/HeaderAdmin";
 import CancelarFiducuenta from "./components/BVCCancelarCuenta/CancelarFiducuenta";
-
+import ModificarUsuarios from "./components/ModificarUsuarios/ModificarUsuarios";
 
 const App = () => {
   return (
@@ -56,12 +56,11 @@ const App = () => {
           />
           <Route path="/HeaderUserInterno" element={<HeaderUserInterno />} />
           <Route path="/HeaderAdminNav" element={<HeaderAdminNav />} />
+          <Route path="/ModificarUsuarios" element={<ModificarUsuarios />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
-      <Router>
-
-      </Router>
+      <Router></Router>
     </>
   );
 };
